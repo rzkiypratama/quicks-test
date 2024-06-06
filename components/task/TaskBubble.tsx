@@ -12,7 +12,7 @@ import { utcToZonedTime } from "date-fns-tz";
 import { TaskItemProps, TasksData } from "@/types";
 import { motion } from "framer-motion";
 
-const TaskContainer: React.FC<TaskItemProps> = ({
+const TaskBubble: React.FC<TaskItemProps> = ({
   taskId,
   title,
   description: initialDescription,
@@ -452,4 +452,4 @@ const TaskContainer: React.FC<TaskItemProps> = ({
   );
 };
 
-export default TaskContainer;
+export default TaskBubble;

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/styles/Loader.module.css";
+import styles from "@/styles/styles.module.css";
 import { LoadingIndicatorProps } from "@/types";
 
 const LoadingIndicator: React.FC<LoadingIndicatorProps> = ({ loadingText }) => (

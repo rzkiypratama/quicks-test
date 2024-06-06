@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import styles from "@/styles/ButtonInbox.module.css";
+import styles from "@/styles/styles.module.css";
 import InboxView from "@/components/inbox/InboxContainer";
 import SearchBar from "@/components/SearchBar";
 import Link from "next/link";

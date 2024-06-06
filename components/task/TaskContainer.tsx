@@ -9,7 +9,7 @@ import useTaskStore from "@/store/useTaskStore";
 import TaskModal from "./TaskModal";
 import { motion } from "framer-motion";
 
-const TodoPage: React.FC = () => {
+const TaskContainer: React.FC = () => {
   const {
     selectedCategory,
     showNewTaskModal,
@@ -132,4 +132,4 @@ const TodoPage: React.FC = () => {
   );
 };
 
-export default TodoPage;
+export default TaskContainer;

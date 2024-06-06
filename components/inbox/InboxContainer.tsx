@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import styles from "@/styles/SearchBarInbox.module.css";
+import styles from "@/styles/styles.module.css";
 import InboxDetailGroup from "./InboxDetailGroup";
 import InboxDetailSingle from "./InboxDetailSingle";
 import LoadingIndicator from "../Loader";
