@@ -1,0 +1,27 @@
+.searchBars {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px 25px;
+  overflow: hidden;
+  background-color: #4f4f4f;
+}
+
+.searchIcons {
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+.searchInputs {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  outline: none;
+  height: 58px;
+  color: #fff;
+  background-color: #4f4f4f;
+}

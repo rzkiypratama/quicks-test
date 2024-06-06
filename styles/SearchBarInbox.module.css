@@ -1,0 +1,25 @@
+.searchBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #333;
+  border-radius: 5px;
+  overflow: hidden;
+  flex-direction: row-reverse;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+.searchIcon {
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
