@@ -29,9 +29,10 @@ const TaskBubble: React.FC<TaskItemProps> = ({
   });
   const [remainingDays, setRemainingDays] = useState<number | null>(null);
   const [taskCreatedDate, setTaskCreatedDate] = useState<string | null>(null);
-  const [taskcreated, setTaskCreated] = useState<string>(
-    initialTaskCreated || "",
-  );
+  const [taskcreated, setTaskCreated] = useState<string>(() => {
+    const storedTaskCreated = localStorage.getItem(`task_${taskId}_created`);
+    return storedTaskCreated || initialTaskCreated || "";
+  });
   const [isOptionsMenuOpen, setIsOptionsMenuOpen] = useState<boolean>(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editedDescription, setEditedDescription] = useState(
@@ -65,8 +66,12 @@ const TaskBubble: React.FC<TaskItemProps> = ({
     );
   }, [isTaskCompleted, taskId]);
 
-  const handleTaskCreatedChange = (newTaskCreated: string) => {
-    setTaskCreated(newTaskCreated);
+  useEffect(() => {
+    localStorage.setItem(`task_${taskId}_created`, taskcreated);
+  }, [taskId, taskcreated]);
+
+  const handleTaskCreatedChange = (editedTaskCreated: string) => {
+    setTaskCreated(editedTaskCreated);
     handleSaveClick();
   };
 
@@ -109,6 +114,7 @@ const TaskBubble: React.FC<TaskItemProps> = ({
       task.id === updatedTask.id ? updatedTask : task,
     );
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+
     setIsEditing(false);
   };
 
