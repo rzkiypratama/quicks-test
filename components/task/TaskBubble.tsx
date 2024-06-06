@@ -10,8 +10,6 @@ import {
 import { format } from "date-fns";
 import { utcToZonedTime } from "date-fns-tz";
 import { TaskItemProps, TasksData } from "@/types";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { motion } from "framer-motion";
 
 const TaskContainer: React.FC<TaskItemProps> = ({
@@ -69,12 +67,7 @@ const TaskContainer: React.FC<TaskItemProps> = ({
 
   const handleTaskCreatedChange = (newTaskCreated: string) => {
     setTaskCreated(newTaskCreated);
-    toast.success("Task date updated!");
-  };
-
-  const handleTitleChange = (newTitle: string) => {
-    setEditedTitle(newTitle);
-    toast.success("Title updated!");
+    handleSaveClick();
   };
 
   const handleDeleteClick = () => {
@@ -116,9 +109,7 @@ const TaskContainer: React.FC<TaskItemProps> = ({
       task.id === updatedTask.id ? updatedTask : task,
     );
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
-
     setIsEditing(false);
-    toast.success("Task Updated");
   };
 
   useEffect(() => {
@@ -223,19 +214,6 @@ const TaskContainer: React.FC<TaskItemProps> = ({
 
   return (
     <main>
-      <ToastContainer
-        position="top-right"
-        autoClose={1750}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
-
       {/* Task header */}
       <div className="my-[22px] flex flex-col-reverse items-center justify-between gap-2 md:flex-row md:gap-0">
         <div className="flex gap-3">
@@ -255,7 +233,7 @@ const TaskContainer: React.FC<TaskItemProps> = ({
                 : ""
             }`}
             onChange={(e) => setEditedTitle(e.target.value)}
-            onBlur={() => handleTitleChange(editedTitle)}
+            onBlur={handleSaveClick}
             disabled={isTaskCompleted}
           />
         </div>
@@ -332,7 +310,10 @@ const TaskContainer: React.FC<TaskItemProps> = ({
                   className="ml-2 rounded border border-gray-300 p-2"
                   value={taskcreated} // taskcreated as input value
                   min="2021-01-01"
-                  onChange={(e) => handleTaskCreatedChange(e.target.value)} // change taskcreated when date is change
+                  onChange={(e) => {
+                    handleTaskCreatedChange(e.target.value);
+                    handleSaveClick();
+                  }}
                   disabled={isTaskCompleted}
                 />
               )}

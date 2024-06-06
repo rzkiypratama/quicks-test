@@ -19,7 +19,6 @@ const TodoPage: React.FC = () => {
     deleteTask,
     loadTasks,
   } = useTaskStore();
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
