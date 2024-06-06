@@ -225,9 +225,9 @@ const TaskContainer: React.FC<TaskItemProps> = ({
           />
           <input
             type="text"
-            placeholder={title}
+            placeholder="Input Your Task Title Here"
             value={editedTitle}
-            className={`w-72 font-semibold placeholder-gray-950 outline-none ${
+            className={`w-72 font-semibold placeholder-slate-400 outline-none ${
               isTaskCompleted
                 ? "text-neutral-400 line-through placeholder-gray-500 disabled:bg-white"
                 : ""
