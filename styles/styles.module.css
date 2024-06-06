@@ -1,0 +1,121 @@
+/* button inbox */
+.inbox-shadow::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #4f4f4f;
+    border-radius: 50%;
+    opacity: 1;
+    z-index: 1;
+    left: -10px;
+  }
+
+  /* chat reply */
+.new-replied-chat {
+    background-color: #9a1717 ;
+  }
+
+  /* search bar task */
+  .searchBars {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 25px;
+    overflow: hidden;
+    background-color: #4f4f4f;
+  }
+  
+  .searchIcons {
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    background-repeat: no-repeat;
+    object-fit: cover;
+  }
+  
+  .searchInputs {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+    height: 58px;
+    color: #fff;
+    background-color: #4f4f4f;
+  }
+
+  /* search bar inbox */
+  .searchBar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #333;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-direction: row-reverse;
+  }
+  
+  .searchInput {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+  }
+  
+  .searchIcon {
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    background-repeat: no-repeat;
+    object-fit: cover;
+  }
+
+  /* loader */
+  .loader-container {
+    /* position: fixed; */
+    top: 50%;
+    bottom: 50%;
+    height: 35rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .spinner {
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    padding: 0px;
+    border-radius: 100%;
+    border: 5px solid;
+    border-top-color: #C4C4C4;
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+    border-left-color: #C4C4C4;
+    border-right-color: rgba(255, 255, 255, 0.3);
+    -webkit-animation: spinner 1s ease-in-out infinite;
+    animation: spinner 1s ease-in-out infinite;
+  }
+  
+  @keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+  
+    to {
+        transform: rotate(360deg);
+    }
+  }
+  
+  @-webkit-keyframes spinner {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+  
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+  }
