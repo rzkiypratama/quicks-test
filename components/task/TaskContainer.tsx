@@ -40,7 +40,7 @@ const TaskContainer: React.FC = () => {
   };
 
   return (
-    <main className="fixed bottom-24 mx-4 h-[70vh] w-full overflow-y-auto bg-white tracking-wide shadow-md lg:right-4 lg:mx-0 lg:h-[80vh] lg:w-[734px]">
+    <main className="fixed bottom-24 h-[86vh] w-full overflow-y-auto rounded-md bg-white pt-3 tracking-wide shadow-md md:mx-4 md:px-9 md:py-6 lg:right-4 lg:mx-0 lg:h-[80vh] lg:w-[734px]">
       <Head>
         <title>Task List</title>
       </Head>
@@ -57,7 +57,7 @@ const TaskContainer: React.FC = () => {
         theme="light"
       />
       {/* task header */}
-      <div className="sticky top-0 z-20 w-full bg-white px-[34px] pt-6">
+      <div className="sticky top-0 z-20 w-full bg-white px-5 md:px-0 md:pl-8">
         <div className="mb-0 flex justify-between">
           <div>
             <select
@@ -85,7 +85,19 @@ const TaskContainer: React.FC = () => {
       </div>
 
       {/* task bubble body */}
-      <div className="h-[70vh] px-[34px]">
+      <motion.div 
+         initial={{
+          opacity: 0.1,
+          scale: 1,
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 0.2,
+        }}
+      className="h-[70vh]">
         {loading ? (
           <LoadingIndicator loadingText={"loading"} />
         ) : tasks.length === 0 ? (
@@ -124,7 +136,7 @@ const TaskContainer: React.FC = () => {
             </div>
           ))
         )}
-      </div>
+      </motion.div>
 
       {/* Use TaskModal component */}
       <TaskModal show={showNewTaskModal} onClose={handleModalClose} />

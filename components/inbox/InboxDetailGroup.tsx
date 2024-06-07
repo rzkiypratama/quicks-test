@@ -4,8 +4,8 @@ import chatData, { ChatData } from "@/utils/chatDataGroup";
 import NewMessageLine from "../NewMessageLine";
 import InboxView from "./InboxContainer";
 import { FaArrowLeft, FaXmark } from "react-icons/fa6";
-import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const InboxViewGroup: React.FC = () => {
   const [chatDataGroupState, setChatDataGroup] = useState<ChatData[]>(chatData);
@@ -21,12 +21,6 @@ const InboxViewGroup: React.FC = () => {
   const [replyMessages, setReplyMessages] = useState<{ [key: number]: string }>(
     {},
   );
-
-  const router = useRouter();
-
-  const handleCloseClick = () => {
-    router.push("/");
-  };
 
   const handleOptionClick = (index: number) => {
     setSelectedChatIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -186,7 +180,7 @@ const InboxViewGroup: React.FC = () => {
   }, []);
 
   return (
-    <main className="fixed bottom-24 right-4 z-40 h-[80vh] w-[734px] rounded-md bg-white tracking-wide shadow-md">
+    <main className="fixed right-0 bottom-24 md:right-4 overflow-y-auto z-40 h-[86vh] md:h-[80vh] md:w-[734px] rounded-md bg-white tracking-wide shadow-md">
       <motion.div 
        initial={{
         opacity: 0,
@@ -215,10 +209,11 @@ const InboxViewGroup: React.FC = () => {
                 </h1>
               </div>
             </div>
+            <Link href="/">
             <FaXmark
               className="cursor-pointer text-black"
-              onClick={handleCloseClick}
             />
+            </Link>
           </div>
         )}
 
@@ -348,11 +343,7 @@ const InboxViewGroup: React.FC = () => {
           {/* new message badge */}
           {showNewMessageBadge && (
             <div
-              className="fixed z-50 m-auto mx-72 w-36 cursor-pointer rounded-md bg-[#E9F3FF] text-center"
-              style={{
-                top: "75%",
-                transform: "translateY(-50%)",
-              }}
+              className="fixed z-50 m-auto mx-24 md:mx-72 w-36 cursor-pointer top-2/3 md:top-3/4 rounded-md bg-[#E9F3FF] text-center -translate-y-2/4"
               onClick={handleBadgeClick}
             >
               <h1 className="select-none p-2 text-main">New Message</h1>

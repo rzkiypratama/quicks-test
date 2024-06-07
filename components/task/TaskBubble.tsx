@@ -329,7 +329,7 @@ const TaskBubble: React.FC<TaskItemProps> = ({
               <div className="mr-6"></div>
               <span>
                 <FaPencilAlt
-                  color={editedDescription ? "#2F80ED" : "#333"}
+                  color={editedDescription ? "#2F80ED" : "#e5e7eb"}
                   onClick={handleEditClick}
                   style={{ cursor: "pointer" }}
                   disabled={isTaskCompleted}

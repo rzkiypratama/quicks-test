@@ -4,6 +4,7 @@ import styles from "@/styles/styles.module.css";
 import InboxDetailGroup from "./InboxDetailGroup";
 import InboxDetailSingle from "./InboxDetailSingle";
 import LoadingIndicator from "../Loader";
+import { motion } from "framer-motion";
 
 const InboxView: React.FC = () => {
   const [showInboxDetail, setShowInboxDetail] = useState(false);
@@ -27,7 +28,7 @@ const InboxView: React.FC = () => {
     fetchData();
   }, []);
   return (
-    <div className="fixed bottom-24 right-4 z-[60] h-[80vh] w-[734px] bg-white px-[34px] pt-5 tracking-wide shadow-md">
+    <div className="fixed bottom-24 z-[60] h-[86vh] w-full overflow-y-auto rounded-md bg-white px-3 py-6 tracking-wide shadow-md md:right-4 md:px-9 lg:h-[80vh] lg:w-[734px]">
       {/* search bar */}
       <div className={`${styles.searchBar} px-10`}>
         <svg
@@ -53,7 +54,19 @@ const InboxView: React.FC = () => {
       </div>
 
       {/* message area */}
-      <div className="message-container">
+      <motion.div 
+      initial={{
+        opacity: 0.1,
+        scale: 1,
+      }}
+      animate={{
+        opacity: 1,
+        scale: 1,
+      }}
+      transition={{
+        duration: 0.2,
+      }}
+      className="message-container">
         {isLoading ? (
           <LoadingIndicator loadingText={"Loading Chats"} />
         ) : (
@@ -203,9 +216,7 @@ const InboxView: React.FC = () => {
                     FastVisa Support
                   </p>
                   {/* message */}
-                  <p className="text-sm">
-                    Hey there! Welcome to your inbox.
-                  </p>
+                  <p className="text-sm">Hey there! Welcome to your inbox.</p>
                 </div>
 
                 <div className="flex gap-3 text-sm">
@@ -219,7 +230,7 @@ const InboxView: React.FC = () => {
             {showInboxSingle && <InboxDetailSingle />}
           </>
         )}
-      </div>
+      </motion.div>
     </div>
   );
 };
