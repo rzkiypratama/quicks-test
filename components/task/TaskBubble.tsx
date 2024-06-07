@@ -120,7 +120,7 @@ const TaskBubble: React.FC<TaskItemProps> = ({
 
   useEffect(() => {
     setIsEditing(false);
-    setEditedDescription(initialDescription || "No Description");
+    setEditedDescription(initialDescription);
   }, [initialDescription]);
 
   useEffect(() => {
@@ -339,7 +339,7 @@ const TaskBubble: React.FC<TaskItemProps> = ({
                 <div className="flex items-center gap-3">
                   <input
                     type="text"
-                    className="rounded border border-gray-300 p-2"
+                    className="rounded border border-gray-300 p-2 placeholder-gray-500"
                     value={editedDescription}
                     onChange={(e) => setEditedDescription(e.target.value)}
                     disabled={isTaskCompleted}
