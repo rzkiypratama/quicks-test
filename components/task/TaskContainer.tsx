@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Head from "next/head";
-import TaskBubble from "./TaskBubble";
+import TaskItems from "./TaskItems";
 import LoadingIndicator from "../Loader";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -100,7 +100,7 @@ const TaskContainer: React.FC = () => {
         className="h-[70vh]"
       >
         {loading ? (
-          <LoadingIndicator loadingText={"loading"} />
+          <LoadingIndicator loadingText={"Loading Task"} />
         ) : tasks.length === 0 ? (
           <div className="pt-56 text-center text-gray-500">
             <p>Currently No Task Available</p>
@@ -114,7 +114,7 @@ const TaskContainer: React.FC = () => {
         ) : (
           tasks.map((task, index) => (
             <div key={index}>
-              <TaskBubble
+              <TaskItems
                 title={task.title}
                 taskcreated={task.taskcreated}
                 description={task.description}
