@@ -355,7 +355,7 @@ const InboxViewGroup: React.FC = () => {
         {/* reply chat bubble */}
         <div className="relative top-1 flex justify-around px-4">
           {isReplying && (
-            <div className="mr-3 w-full rounded-t-md border border-gray-300 bg-gray-100 p-2">
+            <div className="mr-2 w-full rounded-t-md border border-gray-300 bg-gray-100 p-2">
               <div className="flex justify-between p-2">
                 <span className="mr-2 font-semibold text-gray-500">
                   {isReplying && selectedChatIndex !== null
