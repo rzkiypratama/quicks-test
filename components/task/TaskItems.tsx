@@ -12,7 +12,7 @@ import { utcToZonedTime } from "date-fns-tz";
 import { TaskItemProps, TasksData } from "@/types";
 import { motion } from "framer-motion";
 
-const TaskBubble: React.FC<TaskItemProps> = ({
+const TaskItems: React.FC<TaskItemProps> = ({
   taskId,
   title,
   description: initialDescription,
@@ -406,21 +406,24 @@ const TaskBubble: React.FC<TaskItemProps> = ({
 
                   <div
                     id={`stickerOptions-${taskId}`}
-                    className="absolute z-30 hidden w-80 select-none rounded-md border bg-white p-2 mt-3"
+                    className="absolute z-30 mt-3 hidden w-80 select-none rounded-md border bg-white p-2"
                   >
                     {stickerOptions.map((option) => (
-                      <p
+                      <motion.p
+                        whileTap={{
+                          scale: 0.95,
+                        }}
                         key={option}
                         onClick={() => selectSticker(option)}
                         style={{
                           backgroundColor: stickerColors[option],
                         }}
-                        className={`m-2 rounded-md px-5 py-2 text-sm font-semibold select-none ${
+                        className={`m-2 select-none rounded-md px-5 py-2 text-sm font-semibold ${
                           selectedStickers.includes(option) ? "selected" : ""
                         }`}
                       >
                         {option}
-                      </p>
+                      </motion.p>
                     ))}
                   </div>
                 </span>
@@ -428,7 +431,7 @@ const TaskBubble: React.FC<TaskItemProps> = ({
                   {selectedStickers.map((sticker, index) => (
                     <span
                       key={index}
-                      className="p-base m-base mr-1 rounded text-sm font-semibold text-gray-800 select-none"
+                      className="p-base m-base mr-1 select-none rounded text-sm font-semibold text-gray-800"
                       style={{
                         backgroundColor: stickerColors[sticker],
                       }}
@@ -446,4 +449,4 @@ const TaskBubble: React.FC<TaskItemProps> = ({
   );
 };
 
-export default TaskBubble;
+export default TaskItems;
