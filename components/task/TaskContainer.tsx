@@ -75,7 +75,7 @@ const TaskContainer: React.FC = () => {
               whileTap={{
                 scale: 0.95,
               }}
-              className="rounded bg-blue-500 p-2 text-white hover:bg-blue-600"
+              className="rounded-md bg-blue-500 p-2 px-4 text-white hover:bg-blue-600"
               onClick={handleNewTaskClick}
             >
               New Task
@@ -85,8 +85,8 @@ const TaskContainer: React.FC = () => {
       </div>
 
       {/* task bubble body */}
-      <motion.div 
-         initial={{
+      <motion.div
+        initial={{
           opacity: 0.1,
           scale: 1,
         }}
@@ -97,7 +97,8 @@ const TaskContainer: React.FC = () => {
         transition={{
           duration: 0.2,
         }}
-      className="h-[70vh]">
+        className="h-[70vh]"
+      >
         {loading ? (
           <LoadingIndicator loadingText={"loading"} />
         ) : tasks.length === 0 ? (
