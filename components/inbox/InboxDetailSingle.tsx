@@ -361,10 +361,19 @@ const InboxViewSingle: React.FC = () => {
         {/* reply chat bubble */}
         <div className="relative top-1 flex justify-around px-4">
           {isReplying && (
-            <div className="mr-3 w-full rounded-t-md border border-gray-300 bg-gray-100 p-2">
+            <motion.div 
+            initial={{
+              y: 10,
+              opacity: 0.5
+            }}
+            animate={{
+              y: 0,
+              opacity: 1
+            }}
+            className="mr-2 w-full rounded-t-md border border-gray-300 bg-gray-100 p-2">
               <div className="flex justify-between p-2">
                 <span className="mr-2 font-semibold text-gray-500">
-                  Replying to FastVisa Support
+                  Replying to: FastVisa Support
                 </span>
                 <div
                   className="cursor-pointer text-red-500"
@@ -376,7 +385,7 @@ const InboxViewSingle: React.FC = () => {
               <div className="flex items-center rounded-md p-2">
                 <span className="mr-2">{replyMessage}</span>
               </div>
-            </div>
+            </motion.div>
           )}
 
           <div className="px-10"></div>
