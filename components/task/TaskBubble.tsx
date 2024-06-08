@@ -233,7 +233,7 @@ const TaskBubble: React.FC<TaskItemProps> = ({
             type="text"
             placeholder="Input Your Task Title Here"
             value={editedTitle}
-            className={`w-72 font-semibold placeholder-slate-400 outline-none ${
+            className={`w-72 font-semibold placeholder-slate-400 outline-none placeholder:font-normal ${
               isTaskCompleted
                 ? "text-neutral-400 line-through placeholder-gray-500 disabled:bg-white"
                 : ""
@@ -331,7 +331,7 @@ const TaskBubble: React.FC<TaskItemProps> = ({
                 <FaPencilAlt
                   color={editedDescription ? "#2F80ED" : "#e5e7eb"}
                   onClick={handleEditClick}
-                  style={{ cursor: "pointer" }}
+                  className="cursor-pointer"
                   disabled={isTaskCompleted}
                 />
               </span>
@@ -406,7 +406,7 @@ const TaskBubble: React.FC<TaskItemProps> = ({
 
                   <div
                     id={`stickerOptions-${taskId}`}
-                    className="absolute z-30 hidden w-64 select-none rounded-md border bg-white p-2"
+                    className="absolute z-30 hidden w-80 select-none rounded-md border bg-white p-2 mt-3"
                   >
                     {stickerOptions.map((option) => (
                       <p
@@ -414,35 +414,23 @@ const TaskBubble: React.FC<TaskItemProps> = ({
                         onClick={() => selectSticker(option)}
                         style={{
                           backgroundColor: stickerColors[option],
-                          padding: "10px",
-                          borderRadius: "3px",
-                          margin: "10px",
-                          color: "#4f4f4f",
-                          fontWeight: "600",
-                          fontSize: "14px",
                         }}
-                        className={
+                        className={`m-2 rounded-md px-5 py-2 text-sm font-semibold select-none ${
                           selectedStickers.includes(option) ? "selected" : ""
-                        }
+                        }`}
                       >
                         {option}
                       </p>
                     ))}
                   </div>
                 </span>
-                <div className="ml-5">
+                <div className="ml-4">
                   {selectedStickers.map((sticker, index) => (
                     <span
                       key={index}
-                      className="mr-1 text-gray-800"
+                      className="p-base m-base mr-1 rounded text-sm font-semibold text-gray-800 select-none"
                       style={{
                         backgroundColor: stickerColors[sticker],
-                        padding: "5px",
-                        margin: "5px",
-                        borderRadius: "3px",
-                        color: "#4f4f4f",
-                        fontWeight: "600",
-                        fontSize: "14px",
                       }}
                     >
                       {sticker}
