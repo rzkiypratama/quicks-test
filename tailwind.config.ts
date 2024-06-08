@@ -23,6 +23,12 @@ const config: Config = {
       backgroundColor: {
         'main': '#2F80ED',
         'secondary': '#4f4f4f',
+      },
+      padding: {
+        'base': '5px'
+      },
+      margin: {
+        'base': '5px'
       }
     },
   },
