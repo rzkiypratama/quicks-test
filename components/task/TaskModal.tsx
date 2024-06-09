@@ -3,13 +3,9 @@ import React from "react";
 import useTaskStore from "@/store/useTaskStore";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
+import { TaskModalProps } from "@/types";
 
-interface NewTaskModalProps {
-  show: boolean;
-  onClose: () => void;
-}
-
-const NewTaskModal: React.FC<NewTaskModalProps> = ({ show, onClose }) => {
+const NewTaskModal: React.FC<TaskModalProps> = ({ show, onClose }) => {
   const {
     newTaskTitle,
     newTaskDate,
