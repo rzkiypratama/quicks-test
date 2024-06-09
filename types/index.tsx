@@ -6,7 +6,6 @@ export interface ChatDatas {
     time: string;
   };
 }
-
 export interface ReplyData {
   id: number;
   attributes: {
@@ -36,6 +35,10 @@ export interface Task {
   date: string;
 }
 
+export interface TaskModalProps {
+  show: boolean;
+  onClose: () => void;
+}
 
 export interface TaskItemProps {
   taskId: number;
@@ -50,4 +53,17 @@ export interface TaskItemProps {
 
 export interface LoadingIndicatorProps {
   loadingText: string;
+}
+
+export interface TaskListData {
+  id: number;
+  title: string;
+  date: string;
+  description: string;
+}
+
+export interface NewTaskListData {
+  title: string;
+  date: string;
+  description: string;
 }
