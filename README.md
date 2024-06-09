@@ -7,9 +7,6 @@ Welcome to Simpul Technical Test: Quick App! This project is a task and inbox ma
 - **Frontend:**
   - Typescript, Next.js, Tailwind CSS, React Icons, Framer Motion
 
-- **Backend:**
-  - Strapi
-
 ## Features
 
 ### Inbox
@@ -48,28 +45,7 @@ Welcome to Simpul Technical Test: Quick App! This project is a task and inbox ma
 - **Frontend:**
   - [Quick Simpul App on Netlify](https://quick-simpul.netlify.app/)
 
-- **Backend:**
-  - [Strapi Admin Panel on Strapi Cloud](https://leading-sparkle-17b989be67.strapiapp.com/admin)
-
 ## Local Development
 
 - **Frontend Local Server:**
   - Run the app locally on [localhost:3000](http://localhost:3000/) with `npm run dev`
-
-- **Backend Local Server (Strapi):**
-  - Run Strapi locally with `npm run dev`
-
-- **Environment Variables:**
-  - After cloning the frontend project, add a `.env` file with the following content and use the production:
-    ```
-    # Production API URL
-    NEXT_PUBLIC_API_URL=https://leading-sparkle-17b989be67.strapiapp.com/api
-    # Local API URL
-    NEXT_PUBLIC_API_URL=http://localhost:1337/api
-    ```
-
-## Backend Repository
-
-- [Quicks-be GitHub Repository](https://github.com/quicks-be/quicks-be)
-
-Feel free to explore the application and its features. If you have any questions or feedback, don't hesitate to reach out!
