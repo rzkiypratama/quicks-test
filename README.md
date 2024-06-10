@@ -1,6 +1,6 @@
 # Simpul Technical Test: Quick App
 
-Welcome to Simpul Technical Test: Quick App! This project is a task and inbox management application built with Typescript, Next.js, Tailwind, and Strapi.
+Welcome to Simpul Technical Test: Quick App! This project is a task and inbox management application built with Typescript, Next.js, Tailwind, Zustand.
 
 ## Technologies Used
 
